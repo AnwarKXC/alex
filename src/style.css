@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.del-button{
+  @apply border p-2 rounded-lg font-semibold bg-zinc-100 hover:bg-zinc-200 mt-5
+}
+
+input,
+select {
+   @apply border-zinc-200 border rounded-md px-3 py-0.5 mb-1 placeholder:text-sm 
+}
+
+.H2 {
+   @apply text-prim  font-semibold after:h-1 after:w-12 after:bg-blue-100 relative
+}
+
+.H2 span {
+   @apply absolute -bottom-1 rounded w-[44px] h-1 bg-blue-100
+}
+
+label {
+   @apply text-sm  my-1 text-zinc-600 font-medium tracking-wider block
+}
