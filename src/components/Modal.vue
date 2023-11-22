@@ -4,11 +4,14 @@
 			<div v-show=" modalActive "
 				class="absolute w-screen bg-black bg-opacity-50 h-screen top-0 left-0 flex justify-center px-8">
 				<Transition name="modal-inner">
-					<div v-if=" modalActive " class="p-4 bg-white self-start mt-12  max-w-xs md:max-w-lg">
-						<slot />
+					<div v-if=" modalActive " class="p-4 bg-white self-start mt-12 max-w-xs md:max-w-lg">
+						<slot>
+							<!-- Default content goes here if no specific content is provided -->
+							<p>This is the default content.</p>
+						</slot>
 
 						<button @click="$emit( 'close-modal' )"
-							className="px-2 py-1 bg-[#ff6a6a]  text-white text-[13px] rounded-[5px]">
+							class="px-2 py-1 bg-[#ff6a6a] text-white text-[13px] rounded-[5px]">
 							Cancel
 						</button>
 					</div>
@@ -29,20 +32,17 @@ defineProps( {
 </script>
 
 <style scoped>
-.modal-outer-enter-active,
-.modal-outer-leave-active {
+.modal-enter-active,
+.modal-leave-active {
 	transition: opacity 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
 }
 
-.modal-outer-enter-from,
-.modal-outer-leave-to {
+.modal-enter-from,
+.modal-leave-to {
 	opacity: 0;
 }
 
-.modal-inner-enter-active {
-	transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
-}
-
+.modal-inner-enter-active,
 .modal-inner-leave-active {
 	transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
 }

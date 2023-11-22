@@ -9,7 +9,7 @@
 		</div>
 		<div class="flex gap-5 flex-wrap justify-center">
 			<div v-for="    task     of     filterdEmployee    " :key=" task.id ">
-				<TaskDetails :task=" task " />
+				<EmployeeCard :task=" task " />
 			</div>
 			<p class=" text-center text-2xl"
 				v-if=" TaskStore.Tasks.length === 0 && searchQuery === '' ">
@@ -25,9 +25,9 @@
 </template>
 
 <script setup>
-import TaskDetails from './TaskDetails.vue'
 import { ref, computed } from 'vue'
 import { useTaskStore } from '/src/stores/employeeStore'
+import EmployeeCard from './EmployeeCard.vue'
 
 const TaskStore = useTaskStore()
 const searchQuery = ref( "" )

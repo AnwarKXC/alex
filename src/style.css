@@ -12,11 +12,11 @@ select {
    @apply border-zinc-200 border rounded-md px-3 py-0.5 mb-1 placeholder:text-sm 
 }
 
-.H2 {
+.section-title {
    @apply text-prim  font-semibold after:h-1 after:w-12 after:bg-blue-100 relative
 }
 
-.H2 span {
+.section-title span {
    @apply absolute -bottom-1 rounded w-[44px] h-1 bg-blue-100
 }
 
